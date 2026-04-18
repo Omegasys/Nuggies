@@ -1,0 +1,53 @@
+# Nuggies automation pipeline
+version: 1
+
+pipeline:
+  name: dev-environment-setup
+
+  environment:
+    strict_mode: true
+    offline_allowed: false
+    fail_fast: true
+
+steps:
+  - name: update-system
+    action: update
+    targets:
+      - system
+
+  - name: install-core-tools
+    action: install
+    packages:
+      - name: git
+        format: native
+
+      - name: neovim
+        format: native
+
+      - name: tmux
+        format: native
+
+  - name: install-gui-apps
+    action: install
+    packages:
+      - name: firefox
+        format: flatpak
+
+      - name: vlc
+        format: flatpak
+
+  - name: verify-installations
+    action: verify
+    level: strict
+
+  - name: cleanup
+    action: cleanup
+
+logging:
+  level: info
+  save_to_file: true
+  path: ~/.cache/nuggies/pipeline.log
+
+output:
+  summary: true
+  json: false
