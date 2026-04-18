@@ -1,0 +1,72 @@
+# =========================
+# Build Artifacts
+# =========================
+/target/
+build/
+dist/
+
+# Rust
+**/*.rs.bk
+Cargo.lock
+
+# Binaries
+*.exe
+*.out
+*.app
+*.bin
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Config overrides (user-specific)
+configs/local.toml
+
+# Cache / runtime
+.cache/
+.cache/**
+tmp/
+run/
+
+# Test artifacts
+coverage/
+*.prof
+*.gcda
+*.gcno
+
+# TUI/CLI runtime dumps
+*.dump
+
+# Nuggies-specific
+.nuggies-cache/
+.nuggies-state/
+
+# Ignore compiled AppImages if generated
+*.AppImage
+
+# Ignore node junk if GUI ever uses it
+node_modules/
+
+# Ignore Python junk (just in case tools are added)
+__pycache__/
+*.pyc
