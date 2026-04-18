@@ -1,0 +1,29 @@
+# Custom repository definition
+version: 1
+
+repo:
+  name: community-tools
+  type: git
+
+  source:
+    url: https://github.com/example/nuggies-repo
+    branch: main
+
+  trust:
+    require_signatures: true
+    trust_level: medium
+
+  sync:
+    auto_update: false
+    interval_hours: 24
+
+packages:
+  - name: cool-cli-tool
+    path: packages/cool-cli-tool.yaml
+
+  - name: experimental-browser
+    path: packages/experimental-browser.yaml
+
+metadata:
+  maintainer: community
+  description: "User-maintained tools without corporate filtering"
