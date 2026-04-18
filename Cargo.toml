@@ -1,0 +1,17 @@
+[package]
+name = "nuggies"
+version = "0.1.0"
+edition = "2021"
+description = "Transparent, cross-distro Linux package interface"
+license = "GPL-3.0"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+tui = "0.19"
+crossterm = "0.27"
+
+[dev-dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
