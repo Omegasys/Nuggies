@@ -1,0 +1,34 @@
+# Nuggies environment configuration
+version: 1
+
+system:
+  format_preference: auto
+  allow_snap: false
+  strict_security: true
+
+packages:
+  - name: firefox
+    format: flatpak
+    verify: true
+
+  - name: neovim
+    format: native
+    verify: true
+
+  - name: htop
+    format: native
+
+  - name: vlc
+    format: flatpak
+
+settings:
+  parallel_installs: 2
+  confirm_before_install: true
+  show_command_preview: true
+
+hooks:
+  pre_install:
+    - echo "Starting install..."
+
+  post_install:
+    - echo "Install complete"
