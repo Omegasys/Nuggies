@@ -1,0 +1,9 @@
+pub mod search;
+pub mod install;
+pub mod remove;
+pub mod update;
+pub mod rollback;
+pub mod compare;
+pub mod explain;
+pub mod doctor;
+pub mod config;
